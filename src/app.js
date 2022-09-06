@@ -17,6 +17,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Routes Setup
-// app.use(routes);
+app.use(routes);
 
 module.exports = app;
