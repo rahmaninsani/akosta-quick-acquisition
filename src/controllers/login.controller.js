@@ -1,3 +1,4 @@
+const passport = require('passport');
 const { render } = require('../utils');
 
 class LoginController {
@@ -8,6 +9,21 @@ class LoginController {
         title: 'Login',
       },
     });
+  }
+
+  static async auth(req, res, next) {
+    try {
+      passport.authenticate('local', (err, user) => {
+        if (err || !user) return res.redirect('/login');
+
+        return req.login(user, (loginError) => {
+          if (loginError) return next(loginError);
+          res.redirect('/dashboard');
+        });
+      })(req, res, next);
+    } catch (err) {
+      res.sendStatus(500);
+    }
   }
 }
 
