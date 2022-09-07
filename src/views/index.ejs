@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles/argon/argon-dashboard.min.css" />
     <link rel="stylesheet" href="/styles/custom/style.css" />
 
-    <title>
-        Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %>
-    </title>
-</head>
-<body>
-
-<% if(page.includes('login')) { %>
+    <title>Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %></title>
+  </head>
+  <body>
+    <% if(page.includes('login')) { %>
     <!-- Render Login Page-->
-    <%- include(`pages/${page}`); %>
-<% } %>
+    <%- include(`pages/${page}`); %> <% } else { %> <% }%>
 
-<!-- Custom JavaScript -->
-<script src="/scripts/custom/script.js"></script>
-
-</body>
+    <!-- Custom JavaScript -->
+    <script src="/scripts/custom/script.js"></script>
+  </body>
 </html>
