@@ -38,16 +38,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      createdAt: {
-        defaultValue: null,
-        field: 'created_at',
-        type: 'TIMESTAMP',
-      },
-      updatedAt: {
-        defaultValue: null,
-        field: 'updated_at',
-        type: 'TIMESTAMP',
-      },
       slug: {
         allowNull: false,
         type: DataTypes.STRING,
@@ -82,6 +72,16 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id',
         },
         type: DataTypes.BIGINT.UNSIGNED,
+      },
+      createdAt: {
+        defaultValue: null,
+        field: 'created_at',
+        type: 'TIMESTAMP',
+      },
+      updatedAt: {
+        defaultValue: null,
+        field: 'updated_at',
+        type: 'TIMESTAMP',
       },
     },
     {
