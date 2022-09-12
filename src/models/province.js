@@ -3,15 +3,15 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Role extends Model {
+  class Province extends Model {
     static associate(models) {
-      this.hasMany(models.User, {
-        foreignKey: 'role_id',
+      this.hasMany(models.Address, {
+        foreignKey: 'province_id',
       });
     }
   }
 
-  Role.init(
+  Province.init(
     {
       id: {
         allowNull: false,
@@ -36,9 +36,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Role',
-      tableName: 'roles',
+      modelName: 'Province',
+      tableName: 'provinces',
     }
   );
-  return Role;
+  return Province;
 };

@@ -3,20 +3,32 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Role extends Model {
+  class City extends Model {
     static associate(models) {
-      this.hasMany(models.User, {
-        foreignKey: 'role_id',
+      this.belongsTo(models.Province, {
+        foreignKey: 'province_id',
+      });
+      this.hasMany(models.Address, {
+        foreignKey: 'city_id',
       });
     }
   }
 
-  Role.init(
+  City.init(
     {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        type: DataTypes.BIGINT.UNSIGNED,
+      },
+      provinceId: {
+        allowNull: false,
+        field: 'province_id',
+        references: {
+          model: 'provinces',
+          key: 'id',
+        },
         type: DataTypes.BIGINT.UNSIGNED,
       },
       name: {
@@ -36,9 +48,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Role',
-      tableName: 'roles',
+      modelName: 'City',
+      tableName: 'cities',
     }
   );
-  return Role;
+  return City;
 };

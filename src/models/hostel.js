@@ -3,25 +3,22 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Hostel extends Model {
     static associate(models) {
-      this.belongsTo(models.Role, {
-        foreignKey: 'role_id',
-      });
-      this.hasMany(models.Hostel, {
+      this.belongsTo(models.User, {
         foreignKey: 'user_id',
       });
       this.hasMany(models.Address, {
         foreignKey: 'addressableId',
         constraints: false,
         scope: {
-          addressableType: 'App\\Models\\User',
+          addressableType: 'App\\Models\\Hostel',
         },
       });
     }
   }
 
-  User.init(
+  Hostel.init(
     {
       id: {
         allowNull: false,
@@ -29,16 +26,16 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.BIGINT.UNSIGNED,
       },
+      userId: {
+        allowNull: false,
+        field: 'user_id',
+        references: {
+          model: 'users',
+          key: 'id',
+        },
+        type: DataTypes.BIGINT.UNSIGNED,
+      },
       name: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      email: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        unique: true,
-      },
-      password: {
         allowNull: false,
         type: DataTypes.STRING,
       },
@@ -46,36 +43,21 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      gender: {
-        defaultValue: null,
-        type: DataTypes.STRING,
-      },
-      relationship: {
-        defaultValue: null,
-        type: DataTypes.STRING,
-      },
-      phone: {
-        defaultValue: null,
-        type: DataTypes.STRING,
+      description: {
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       status: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      isVerified: {
+      type: {
         allowNull: false,
-        defaultValue: 0,
-        field: 'is_verified',
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.STRING,
       },
-      roleId: {
-        allowNull: false,
-        field: 'role_id',
-        references: {
-          model: 'roles',
-          key: 'id',
-        },
-        type: DataTypes.BIGINT.UNSIGNED,
+      gender: {
+        defaultValue: null,
+        type: DataTypes.STRING,
       },
       createdAt: {
         defaultValue: null,
@@ -90,9 +72,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'User',
-      tableName: 'users',
+      modelName: 'Hostel',
+      tableName: 'hostels',
     }
   );
-  return User;
+  return Hostel;
 };
