@@ -1,6 +1,6 @@
 /*--------------------------------
 
-hermes-dashboard-icons Web Font - built using nucleoapp.com
+hermes-hostel-icons Web Font - built using nucleoapp.com
 License - nucleoapp.com/license/
 
 -------------------------------- */
@@ -72,24 +72,24 @@ License - nucleoapp.com/license/
   list-style-type: none;
 }
 
-.ni-ul>li {
+.ni-ul > li {
   position: relative;
 }
 
-.ni-ul>li>.ni {
+.ni-ul > li > .ni {
   position: absolute;
   left: -1.57142857em;
   top: 0.14285714em;
   text-align: center;
 }
 
-.ni-ul>li>.ni.lg {
+.ni-ul > li > .ni.lg {
   top: 0;
   left: -1.35714286em;
 }
 
-.ni-ul>li>.ni.circle,
-.ni-ul>li>.ni.square {
+.ni-ul > li > .ni.circle,
+.ni-ul > li > .ni.square {
   top: -0.19047619em;
   left: -1.9047619em;
 }
