@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/argon/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="/argon/img/favicon.png" />
     <title>Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %></title>
 
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,29 +16,32 @@
     />
 
     <!-- Nucleo Icons -->
-    <link href="/styles/argon/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="/styles/argon/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="/argon/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="/argon/css/nucleo-svg.css" rel="stylesheet" />
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="/styles/argon/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="/argon/css/nucleo-svg.css" rel="stylesheet" />
+
     <!-- CSS Files -->
-    <link id="pagestyle" href="/styles/argon/css/argon-dashboard.css" rel="stylesheet" />
+    <link id="pagestyle" href="/argon/css/argon-dashboard.css" rel="stylesheet" />
 
     <!-- CSS bootstrap only -->
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
       crossorigin="anonymous"
-    />
+    /> -->
 
     <!-- datatable styles -->
+    <% if(page.includes('hostel')) { %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bulma.min.css" />
+    <% } %>
 
     <!-- custom css -->
-    <link rel="stylesheet" href="/styles/custom/style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
   </head>
 
   <body class="g-sidenav-show bg-gray-100">
@@ -50,7 +52,10 @@
     <!-- Sidebar -->
     <%- include('./partials/sidebar/index'); %>
     <!-- Main Page -->
-    <%- include(`pages/${page}`, props); %> <% } %>
+    <%- include(`pages/${page}`, props); %>
+
+    <!-- footer -->
+    <%- include('./partials/footer/index'); %> <% } %>
 
     <!-- data table script -->
 
@@ -72,17 +77,17 @@
     ></script> -->
 
     <!--   Core JS Files   -->
-    <script src="/scripts/argon/js/core/popper.min.js"></script>
-    <script src="/scripts/argon/js/core/bootstrap.min.js"></script>
+    <script src="/argon/js/core/popper.min.js"></script>
+    <script src="/argon/js/core/bootstrap.min.js"></script>
 
     <!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
-    <script src="/scripts/argon/js/plugins/chartjs.min.js"></script>
-    <script src="/scripts/argon/js/plugins/Chart.extension.js"></script>
+    <script src="/argon/js/plugins/chartjs.min.js"></script>
+    <script src="/argon/js/plugins/Chart.extension.js"></script>
 
     <!-- Control Center for Argon Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="/scripts/argon/js/argon-dashboard.min.js"></script>
+    <script src="/argon/js/argon-dashboard.min.js"></script>
 
     <!-- Custom JavaScript -->
-    <script src="/scripts/custom/script.js"></script>
+    <script src="/scripts/script.js"></script>
   </body>
 </html>
