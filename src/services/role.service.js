@@ -3,7 +3,7 @@ const { Role } = require('../models');
 const Service = require('./service');
 
 class RoleService extends Service {
-  static async findOneRoleById(id) {
+  static async findOneById(id) {
     const options = {
       where: {
         id,

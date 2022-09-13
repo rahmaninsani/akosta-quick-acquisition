@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         scope: {
           addressableType: 'App\\Models\\User',
         },
+        as: 'Address',
       });
     }
   }

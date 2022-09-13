@@ -36,6 +36,16 @@ app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Dev Only
+app.use((req, res, next) => {
+  req.user = {
+    name: 'Alice',
+    email: 'alice@gmail.com',
+    role: 'admin',
+  };
+  next();
+});
+
 // Routes Setup
 app.use(routes);
 

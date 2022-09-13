@@ -3,6 +3,8 @@ const { render } = require('../utils');
 
 class LoginController {
   static index(req, res) {
+    if (req.isAuthenticated()) return res.redirect('/dashboard');
+
     render(res, {
       page: 'login/index',
       props: {
