@@ -1,5 +1,5 @@
 const { UserService } = require('../services');
-const { render } = require('../utils');
+const { render, toCapitalizeEachWord, toDateTimeFormat } = require('../utils');
 
 class HostelController {
   static async index(req, res) {
@@ -12,6 +12,10 @@ class HostelController {
           title: 'Hostel',
           data: {
             users,
+          },
+          util: {
+            toCapitalizeEachWord,
+            toDateTimeFormat
           },
         },
       });

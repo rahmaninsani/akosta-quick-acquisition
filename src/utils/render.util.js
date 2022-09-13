@@ -3,6 +3,7 @@ const defaultProps = {
   props: {
     title: '',
     data: {},
+    util: {},
     error: '',
   }, // props to pass to page
 };
