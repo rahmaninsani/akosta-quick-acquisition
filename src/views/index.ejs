@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="apple-touch-icon" sizes="76x76" href="/argon/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="/argon/img/favicon.png" />
+    <!-- <link rel="icon" type="image/png" href="/argon/img/favicon.png" /> -->
     <title>Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %></title>
 
     <!--     Fonts and icons     -->
@@ -26,14 +26,6 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="/argon/css/argon-dashboard.css" rel="stylesheet" />
 
-    <!-- CSS bootstrap only -->
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
-      crossorigin="anonymous"
-    /> -->
-
     <!-- datatable styles -->
     <% if(page.includes('hostel')) { %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
@@ -52,7 +44,14 @@
     <!-- Sidebar -->
     <%- include('./partials/sidebar/index'); %>
     <!-- Main Page -->
-    <%- include(`pages/${page}`, props); %>
+    <main class="main-content position-relative border-radius-lg">
+      <!-- navbar -->
+      <%- include('./partials/navbar/index'); %>
+      <!-- end navbar -->
+      <!-- main list -->
+      <%- include(`pages/${page}`, props); %>
+      <!-- end list -->
+    </main>
 
     <!-- footer -->
     <%- include('./partials/footer/index'); %> <% } %>
@@ -68,13 +67,6 @@
         $('#tableData').DataTable();
       });
     </script>
-
-    <!-- JavaScript Bundle with Popper -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-      crossorigin="anonymous"
-    ></script> -->
 
     <!--   Core JS Files   -->
     <script src="/argon/js/core/popper.min.js"></script>
