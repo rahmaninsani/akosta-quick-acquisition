@@ -15,13 +15,27 @@ class HostelController {
           },
           util: {
             toCapitalizeEachWord,
-            toDateTimeFormat
+            toDateTimeFormat,
           },
         },
       });
     } catch (error) {
       res.sendStatus(500);
     }
+  }
+
+  static async detail(req, res) {
+    const { userSlug } = req.params;
+
+    render(res, {
+      page: 'hostel/detail',
+      props: {
+        title: 'Detail',
+        data: {
+          userSlug
+        }
+      },
+    });
   }
 }
 
