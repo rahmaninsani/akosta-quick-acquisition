@@ -21,7 +21,6 @@ class UserService extends Service {
         'email',
         'slug',
         'status',
-        'createdAt',
         'slug',
         [sequelize.col('Address.Village.name'), 'villageName'],
         [sequelize.col('Address.District.name'), 'districtName'],
