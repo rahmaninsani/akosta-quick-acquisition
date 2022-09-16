@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="apple-touch-icon" sizes="76x76" href="/argon/img/apple-icon.png" />
     <!-- <link rel="icon" type="image/png" href="/argon/img/favicon.png" /> -->
-    <title>Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %></title>
+    <title>
+        Akosta<%= typeof props.title === 'string' && props.title.trim().length > 0 ? ` | ${props.title}` : ''; %></title>
 
     <!--     Fonts and icons     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+            rel="stylesheet"
     />
 
     <!-- Nucleo Icons -->
@@ -27,59 +28,61 @@
     <link id="pagestyle" href="/argon/css/argon-dashboard.css" rel="stylesheet" />
 
     <!-- datatable styles -->
-    <% if(page.includes('hostel')) { %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bulma.min.css" />
+    <% if(page.includes('user') || page.includes('hostel')) { %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bulma.min.css" />
     <% } %>
 
     <!-- custom css -->
     <link rel="stylesheet" href="/styles/style.css" />
-  </head>
+</head>
 
-  <body class="g-sidenav-show bg-gray-100">
-    <% if(page.includes('login')) { %>
+<body class="g-sidenav-show bg-gray-100">
+<% if(page.includes('login')) { %>
     <!-- Render Login Page-->
-    <%- include(`pages/${page}`); %> <% } else { %>
+    <%- include(`pages/${page}`); %>
+<% } else { %>
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <!-- Sidebar -->
     <%- include('./partials/sidebar/index'); %>
     <!-- Main Page -->
     <main class="main-content position-relative border-radius-lg">
-      <!-- navbar -->
-      <%- include('./partials/navbar/index'); %>
-      <!-- end navbar -->
-      <!-- main list -->
-      <%- include(`pages/${page}`, props); %>
-      <!-- end list -->
+        <!-- navbar -->
+        <%- include('./partials/navbar/index'); %>
+        <!-- end navbar -->
+        <!-- main list -->
+        <%- include(`pages/${page}`, props); %>
+        <!-- end list -->
     </main>
 
     <!-- footer -->
-    <%- include('./partials/footer/index'); %> <% } %>
+    <%- include('./partials/footer/index'); %>
+<% } %>
 
-    <!-- data table script -->
+<!-- data table script -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bulma.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bulma.min.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        $('#tableData').DataTable();
-      });
-    </script>
+<script>
+  $(document).ready(function() {
+    $('#tableData').DataTable();
+  });
+</script>
 
-    <!--   Core JS Files   -->
-    <script src="/argon/js/core/popper.min.js"></script>
-    <script src="/argon/js/core/bootstrap.min.js"></script>
+<!--   Core JS Files   -->
+<script src="/argon/js/core/popper.min.js"></script>
+<script src="/argon/js/core/bootstrap.min.js"></script>
 
-    <!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
-    <script src="/argon/js/plugins/chartjs.min.js"></script>
-    <script src="/argon/js/plugins/Chart.extension.js"></script>
+<!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
+<script src="/argon/js/plugins/chartjs.min.js"></script>
+<script src="/argon/js/plugins/Chart.extension.js"></script>
 
-    <!-- Control Center for Argon Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="/argon/js/argon-dashboard.min.js"></script>
+<!-- Control Center for Argon Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/argon/js/argon-dashboard.min.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="/scripts/script.js"></script>
-  </body>
+<!-- Custom JavaScript -->
+<script src="/scripts/script.js"></script>
+</body>
 </html>
