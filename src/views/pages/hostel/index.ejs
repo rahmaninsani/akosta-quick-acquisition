@@ -23,12 +23,9 @@
             <table id="tableData" class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pemilik</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Alamat</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Hostel</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Alamat Hostel</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                    ditambahkan
-                  </th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                 </tr>
               </thead>
@@ -39,7 +36,6 @@
                     <div class="d-flex px-2 py-1">
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="mb-0 text-sm"><%= user.name %></h6>
-                        <p class="text-xs text-secondary mb-0"><%= user.email %></p>
                       </div>
                     </div>
                   </td>
@@ -54,16 +50,11 @@
                     </p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-success"><%= user.status %></span>
-                  </td>
-                  <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">
-                      <%= util.toDateTimeFormat(user.createdAt) %>
-                    </span>
+                    <span class="badge badge-sm bg-gradient-success">Tersedia</span>
                   </td>
                   <td class="align-middle text-center">
                     <a
-                      href="/hostel/<%= user.slug %>"
+                      href="/hostels/<%= user.slug %>"
                       class="text-secondary font-weight-bold text-xs"
                       data-toggle="tooltip"
                       data-original-title="Edit user"
