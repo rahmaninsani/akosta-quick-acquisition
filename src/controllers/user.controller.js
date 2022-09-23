@@ -23,17 +23,61 @@ class UserController {
     }
   }
 
+  static add(req, res) {
+    render(res, {
+      page: 'user/add',
+      props: {
+        title: 'Tambah Pengguna',
+      },
+    });
+  }
+
+  static async save(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
+    });
+  }
+
   static async detail(req, res) {
     const { userSlug } = req.params;
 
     render(res, {
       page: 'user/detail',
       props: {
-        title: 'Detail',
+        title: 'Detail Pengguna',
         data: {
           userSlug,
         },
       },
+    });
+  }
+
+  static async edit(req, res) {
+    const { userSlug } = req.params;
+
+    render(res, {
+      page: 'user/edit',
+      props: {
+        title: 'Edit Pengguna',
+        data: {
+          userSlug,
+        },
+      },
+    });
+  }
+
+  static async update(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
+    });
+  }
+
+  static async delete(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
     });
   }
 }
