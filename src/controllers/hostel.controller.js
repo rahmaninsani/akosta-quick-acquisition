@@ -4,14 +4,14 @@ const { render, toCapitalizeEachWord, toDateTimeFormat } = require('../utils');
 class HostelController {
   static async index(req, res) {
     try {
-      const users = await UserService.findAllJoinAddress();
+      const hostels = await UserService.findAllJoinAddress();
 
       render(res, {
         page: 'hostel/index',
         props: {
           title: 'Hostel',
           data: {
-            users,
+            hostels,
           },
           util: {
             toCapitalizeEachWord,
@@ -24,17 +24,61 @@ class HostelController {
     }
   }
 
+  static add(req, res) {
+    render(res, {
+      page: 'hostel/add',
+      props: {
+        title: 'Tambah Hostel',
+      },
+    });
+  }
+
+  static async save(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
+    });
+  }
+
   static async detail(req, res) {
-    const { userSlug } = req.params;
+    const { hostelSlug } = req.params;
 
     render(res, {
       page: 'hostel/detail',
       props: {
         title: 'Detail',
         data: {
-          userSlug
-        }
+          hostelSlug,
+        },
       },
+    });
+  }
+
+  static async edit(req, res) {
+    const { hostelSlug } = req.params;
+
+    render(res, {
+      page: 'hostel/edit',
+      props: {
+        title: 'Edit Hostel',
+        data: {
+          hostelSlug,
+        },
+      },
+    });
+  }
+
+  static async update(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
+    });
+  }
+
+  static async delete(req, res) {
+    res.status(200).json({
+      code: 200,
+      message: 'OK',
     });
   }
 }
