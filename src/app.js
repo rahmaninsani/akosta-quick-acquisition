@@ -3,11 +3,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const passport = require('passport');
 const session = require('express-session');
 
 const routes = require('./routes');
 const { passportLocalStrategy } = require('./middlewares');
+
+// Allow PUT and DELETE method on HTML Form
+app.use(methodOverride('_method'));
 
 // App Setup
 app.use(morgan('dev'));
