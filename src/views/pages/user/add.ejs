@@ -1,5 +1,149 @@
-<h1>Tambah Pengguna</h1>
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <div class="d-flex align-items-center mb-2">
+            <h1>Tambah Pengguna</h1>
+          </div>
+        </div>
 
-<form method="POST" action="/users">
-    <button type="submit">Tambah</button>
-</form>
+        <form method="POST" action="/users">
+          <div class="card-body">
+            <p class="text-uppercase text-sm">Informasi Pengguna</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Username</label>
+                  <input class="form-control" type="text" placeholder="adit123" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Alamat Email</label>
+                  <input class="form-control" type="email" placeholder="adit212@gmail.com" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama</label>
+                  <input class="form-control" type="text" placeholder="Aditya" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama akhir</label>
+                  <input class="form-control" type="text" placeholder="Nugraha" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Jenis Kelamin</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Laki-laki</option>
+                      <option value="2">Perempuan</option>
+                      <option value="3">Lain-lain</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Status Pernikahan</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Kawin</option>
+                      <option value="2">Belum Kawin</option>
+                      <option value="3">Janda/Duda</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Pekerjaan</label>
+                  <input class="form-control" type="text" placeholder="Wiraswasta" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kompani</label>
+                  <input class="form-control" type="text" placeholder="PT Tebu Indonsia" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nomor Hanphone</label>
+                  <input class="form-control" type="number" placeholder="08531247567" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Status</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Aktif</option>
+                      <option value="2">Tidak Aktif</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Alamat Pengguna</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Alamat Lengkap</label>
+                  <input class="form-control" type="text" placeholder="Jl. Terusan Suryani no 45b" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kota</label>
+                  <input class="form-control" type="text" placeholder="Bandung" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Negara</label>
+                  <input class="form-control" type="text" placeholder="Indonesia" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kode Pos</label>
+                  <input class="form-control" type="text" placeholder="437300" />
+                </div>
+              </div>
+            </div>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Tentang</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="fasfasfsadfdsafads"
+                    id="floatingTextarea2"
+                    style="height: 100px"
+                    va
+                  ></textarea>
+                  <label for="floatingTextarea2">Tentang user</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-end pr-4">
+            <button type="submit" class="btn btn-primary">Tambah</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+>

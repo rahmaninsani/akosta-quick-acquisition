@@ -1,5 +1,129 @@
-<h1>Tambah Hostel</h1>
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <div class="d-flex align-items-center mb-2">
+            <h1>Tambah Hostel</h1>
+          </div>
+        </div>
 
-<form method="POST" action="/hostels">
-    <button type="submit">Tambah</button>
-</form>
+        <form method="POST" action="/users">
+          <div class="card-body">
+            <p class="text-uppercase text-sm">Informasi Hostel</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama Hostel</label>
+                  <input class="form-control" type="text" placeholder="Hostel Berkah John Doe" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama Pemilik</label>
+                  <input class="form-control" type="email" placeholder="John Doe" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Email Pemilik</label>
+                  <input class="form-control" type="text" placeholder="johndoe@gmail.com" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">No Pemilik</label>
+                  <input class="form-control" type="number" placeholder="0853454597" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Status Hostel</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Tersedia</option>
+                      <option value="2">Penuh</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Harga Perbulan</label>
+                  <input class="form-control" type="number" placeholder="500000" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Harga Pertahun</label>
+                  <input class="form-control" type="number" placeholder="7000000" />
+                </div>
+              </div>
+            </div>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Alamat Hostel</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Alamat Lengkap</label>
+                  <input class="form-control" type="text" placeholder="Jl. Terusan Suryani no 45b" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Provinsi</label>
+                  <input class="form-control" type="text" placeholder="Jawa Barat" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kota/Kabupaten</label>
+                  <input class="form-control" type="text" placeholder="Kota Bandung" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kecamatan</label>
+                  <input class="form-control" type="text" placeholder="Coblong" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Desa</label>
+                  <input class="form-control" type="text" placeholder="Dago" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kode Pos</label>
+                  <input class="form-control" type="text" placeholder="437300" />
+                </div>
+              </div>
+            </div>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Deskripsi</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="fasfasfsadfdsafads"
+                    id="floatingTextarea2"
+                    style="height: 100px"
+                    va
+                  ></textarea>
+                  <label for="floatingTextarea2">Tentang Hostel</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-end pr-4">
+            <button type="submit" class="btn btn-primary">Tambah</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+>

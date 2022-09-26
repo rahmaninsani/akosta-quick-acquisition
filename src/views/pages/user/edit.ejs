@@ -1,85 +1,149 @@
-<div class="col-md-8">
-    <div class="card">
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
         <div class="card-header pb-0">
-            <div class="d-flex align-items-center">
-                <p class="mb-0">Edit Profile</p>
-                <button class="btn btn-primary btn-sm ms-auto">Settings</button>
-            </div>
+          <div class="d-flex align-items-center mb-2">
+            <h1>Edit Pengguna</h1>
+          </div>
         </div>
-        <form method="POST" action="/users/<%= data.userSlug %>?_method=PUT">
-            <div class="card-body">
-                <p class="text-uppercase text-sm">User Information</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Username</label>
-                            <input class="form-control" type="text" value="lucky.jesse" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Email address</label>
-                            <input class="form-control" type="email" value="jesse@example.com" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">First name</label>
-                            <input class="form-control" type="text" value="Jesse" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Last name</label>
-                            <input class="form-control" type="text" value="Lucky" />
-                        </div>
-                    </div>
+
+        <form method="POST" action="/users">
+          <div class="card-body">
+            <p class="text-uppercase text-sm">Informasi Pengguna</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Username</label>
+                  <input class="form-control" type="text" value="lucky17" />
                 </div>
-                <hr class="horizontal dark" />
-                <p class="text-uppercase text-sm">Contact Information</p>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Address</label>
-                            <input class="form-control" type="text"
-                                   value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">City</label>
-                            <input class="form-control" type="text" value="New York" />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Country</label>
-                            <input class="form-control" type="text" value="United States" />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">Postal code</label>
-                            <input class="form-control" type="text" value="437300" />
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Alamat Email</label>
+                  <input class="form-control" type="email" value="lucky69@gmail.com" />
                 </div>
-                <hr class="horizontal dark" />
-                <p class="text-uppercase text-sm">About me</p>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="example-text-input" class="form-control-label">About me</label>
-                            <input
-                                    class="form-control"
-                                    type="text"
-                                    value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source."
-                            />
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama</label>
+                  <input class="form-control" type="text" value="Lucky" />
                 </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nama akhir</label>
+                  <input class="form-control" type="text" value="Syaputra" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Jenis Kelamin</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Laki-laki</option>
+                      <option value="2">Perempuan</option>
+                      <option value="3">Lain-lain</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Status Pernikahan</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Kawin</option>
+                      <option value="2">Belum Kawin</option>
+                      <option value="3">Janda/Duda</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Pekerjaan</label>
+                  <input class="form-control" type="text" value="Wiraswasta" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kompani</label>
+                  <input class="form-control" type="text" value="Akosta" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nomor Hanphone</label>
+                  <input class="form-control" type="number" value="08531247567" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Status</label>
+                  <div>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Aktif</option>
+                      <option value="2">Tidak Aktif</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Alamat Pengguna</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Alamat Lengkap</label>
+                  <input class="form-control" type="text" value="Jl Ir Juanda no 14b RT/RW 01/01" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kota</label>
+                  <input class="form-control" type="text" value="Bandung" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Negara</label>
+                  <input class="form-control" type="text" value="Indonesia" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Kode Pos</label>
+                  <input class="form-control" type="text" value="437300" />
+                </div>
+              </div>
+            </div>
+            <hr class="horizontal dark" />
+            <p class="text-uppercase text-sm">Tentang</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="loremipsum"
+                    id="floatingTextarea2"
+                    style="height: 100px"
+                    va
+                  ></textarea>
+                  <label for="floatingTextarea2">Tentang user</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-end pr-4">
+            <button type="submit" class="btn btn-primary">Edit</button>
+          </div>
         </form>
+      </div>
     </div>
+  </div>
 </div>
+>
