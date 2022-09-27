@@ -21,7 +21,21 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="example-text-input" class="form-control-label">Nama Pemilik</label>
-                  <input class="form-control" type="email" placeholder="John Doe" />
+                  <div class="d-flex justify-content-between align-items-center">
+                    <input
+                      list="browsers"
+                      name="browser"
+                      id="browser"
+                      placeholder="Pilih"
+                      class="form-control mr-2"
+                      aria-label="Default select example"
+                    />
+                    <datalist id="browsers">
+                      <option value="Ahmad Bustomi" label="ahmadbustomi@gmail.com"></option>
+                      <option value="Rizky Ahmad" label="rizky@gmail.com"></option>
+                      <option value="rijal abdul" label="rijalabdul@gmail.com"></option>
+                    </datalist>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
