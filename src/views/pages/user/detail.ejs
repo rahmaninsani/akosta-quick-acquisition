@@ -46,12 +46,49 @@
                       <p class="py-2 px-3 rounded bg-gradient-success text-white mb-0">Aktif</p>
                     </div>
                     <div class="ms-auto text-end">
+                      <input type="hidden" name="_method" value="DELETE" />
+                      <button
+                        type="button"
+                        class="btn btn-link text-danger text-gradient px-3 mb-0"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
+                      >
+                        <i class="far fa-trash-alt me-2"></i>Hapus
+                      </button>
+
                       <form class="d-inline" method="POST" action="/users/<%= data.userSlug %>?_method=DELETE">
-                        <input type="hidden" name="_method" value="DELETE" />
-                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0">
-                          <i class="far fa-trash-alt me-2"></i>Hapus
-                        </button>
+                        <!-- Modal -->
+                        <div
+                          style="z-index: 2000"
+                          class="modal fade"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">
+                                  Apakah anda yakin ingin menghapus user ini?
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body text-start">
+                                Jika anda menghapus user ini semua data yang berelasi dengan user ini akan terhapus dan tidak
+                                bisa dikembalikan lagi, kecuali anda menambahkan ulang data tersebut!
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </form>
+
                       <a class="btn btn-link text-dark px-3 mb-0" href="/users/<%= data.userSlug %>/edit"
                         ><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a
                       >
@@ -79,9 +116,14 @@
                   </div>
                   <div>
                     <div class="ms-auto">
-                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"
-                        ><i class="far fa-trash-alt me-2"></i>Hapus</a
+                      <button
+                        type="button"
+                        class="btn btn-link text-danger text-gradient px-3 mb-0"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
                       >
+                        <i class="far fa-trash-alt me-2"></i>Hapus
+                      </button>
                       <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"
                         ><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a
                       >
@@ -104,9 +146,14 @@
                   </div>
                   <div>
                     <div class="ms-auto">
-                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"
-                        ><i class="far fa-trash-alt me-2"></i>Hapus</a
+                      <button
+                        type="button"
+                        class="btn btn-link text-danger text-gradient px-3 mb-0"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
                       >
+                        <i class="far fa-trash-alt me-2"></i>Hapus
+                      </button>
                       <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"
                         ><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a
                       >
@@ -129,9 +176,14 @@
                   </div>
                   <div>
                     <div class="ms-auto">
-                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"
-                        ><i class="far fa-trash-alt me-2"></i>Hapus</a
+                      <button
+                        type="button"
+                        class="btn btn-link text-danger text-gradient px-3 mb-0"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2"
                       >
+                        <i class="far fa-trash-alt me-2"></i>Hapus
+                      </button>
                       <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"
                         ><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a
                       >
@@ -139,6 +191,36 @@
                   </div>
                 </li>
               </ul>
+              <form class="d-inline" method="POST" action="/hostels/<%= data.hostelSlug %>?_method=DELETE">
+                <!-- Modal -->
+                <div
+                  style="z-index: 2000"
+                  class="modal fade"
+                  id="staticBackdrop2"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Apakah anda yakin ingin menghapus hostel ini?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-start">
+                        Ingat! data yang sudah dihapus tidak bisa dikembalikan semula lagi, kecuali anda menambahkan ulang
+                        data tersebut!
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </li>
           </ul>
         </div>
